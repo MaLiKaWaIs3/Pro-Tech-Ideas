@@ -36,7 +36,7 @@ function Editdoctor() {
   }, []);
 
   const getdoctorById = async () => {
-    const response = await axios.get(`http://localhost:3002/doctors/${id}`);
+    const response = await axios.get(`http://localhost:3002/experts/${id}`);
 
     setFirstName(response.data.userId.firstName);
     setLastName(response.data.userId.lastName);
@@ -53,7 +53,7 @@ function Editdoctor() {
   const updatedoctor = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`http://localhost:3002/doctors/${id}`, {
+      await axios.patch(`http://localhost:3002/experts/${id}`, {
         firstName,
         lastName,
         username,

@@ -9,6 +9,7 @@ const IdeaSchema = new Schema({
   },
   studentId: {
     type: mongoose.Schema.Types.ObjectId,
+    default:null
   },
   name: {
     type: String,
@@ -23,9 +24,17 @@ const IdeaSchema = new Schema({
     type: String,
     default:null,
   },
+  message: {
+    type: String,
+    default: null
+  },
   status: {
     type: Boolean,
     default: false,
+  },
+  expertId: {
+    type: mongoose.Schema.Types.ObjectId,
+
   }
 });
 const Ideas = mongoose.model("Idea", IdeaSchema);

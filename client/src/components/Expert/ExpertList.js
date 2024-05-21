@@ -28,7 +28,7 @@ function DoctorList() {
     );
 
     const getdoctors = async () => {
-        const response = await axios.get("http://localhost:3002/doctors", {
+        const response = await axios.get("http://localhost:3002/experts", {
             params: {
                 name: name
             }
@@ -38,7 +38,7 @@ function DoctorList() {
 
     const deleteDoctor = async (id) => {
         try {
-            await axios.delete(`http://localhost:3002/doctors/${id}`);
+            await axios.delete(`http://localhost:3002/experts/${id}`);
             getdoctors();
         } catch (error) {
             setErrorList(error);

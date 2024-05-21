@@ -21,6 +21,7 @@ import styles from './Sidebar.module.css'
 import GroupsIcon from '@mui/icons-material/Groups';
 import PersonIcon from '@mui/icons-material/Person';
 import PeopleIcon from '@mui/icons-material/People';
+import { SearchOffOutlined } from '@mui/icons-material';
 import EmojiObjectsIcon from '@mui/icons-material/EmojiObjects';
 
 const drawerWidth = 240;
@@ -238,6 +239,37 @@ export default function Sidebar({ open, handleDrawerClose, handleDrawerOpen }) {
                             <EmojiObjectsIcon style={{ color: '#fff' }} />
                         </ListItemIcon>
                         <ListItemText primary={"Your Ideas"} sx={{ opacity: open ? 1 : 0 }} />
+                    </ListItemButton>
+                </ListItem>}
+                { currentUser.userType === "Student" && <ListItem key={"Project Ideas" }disablePadding sx={{ display: 'block' }}>
+                    <ListItemButton
+                        component={NavLink}
+                        to="/projectideas"
+                        style={{ textDecoration: 'none', color: 'white' }}
+                        selected={selectedItem === "ideatoreview" ? true : false}
+                        sx={{
+                            minHeight: 48,
+                            justifyContent: open ? 'initial' : 'center',
+                            px: 2.5,
+                            "&.Mui-selected": {
+                                backgroundColor: "#2e80bf",
+                            },
+                            "&.Mui-selected:hover": {
+                                backgroundColor: "#2e80bf",
+                            },
+                        }}
+                        onClick={handleUserClicked}
+                    >
+                        <ListItemIcon
+                            sx={{
+                                minWidth: 0,
+                                mr: open ? 3 : 'auto',
+                                justifyContent: 'center',
+                            }}
+                        >
+                            <SearchOffOutlined style={{ color: '#fff' }} />
+                        </ListItemIcon>
+                        <ListItemText primary={"Project Ideas"} sx={{ opacity: open ? 1 : 0 }} />
                     </ListItemButton>
                 </ListItem>}
                 {currentUser.userType === "Student" && <ListItem key={"Post Idea"} disablePadding sx={{ display: 'block' }}>

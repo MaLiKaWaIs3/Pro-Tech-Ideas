@@ -15,12 +15,12 @@ const getIdeas = async (req, res) => {
     }
 };
 
-
 const saveIdeas = async (req, res) => {
+    console.log(req.body);
     try {
-        const { studentName, ideaName, ideaDescription, userId } = req.body;
+        const { studentName, ideaName, ideaDescription, userId, expertId, message } = req.body;
 
-        if (!studentName || !ideaName || !ideaDescription) {
+        if (!studentName || !ideaName || !ideaDescription || !expertId || !message) {
             return res.status(400).json({ message: "Please provide all the required information" });
         }
 
@@ -29,6 +29,8 @@ const saveIdeas = async (req, res) => {
             idea_name: ideaName,
             idea_Description: ideaDescription,
             studentId: userId,
+            expertId: expertId, // Assuming Idea schema includes an expertId field
+            message: message // Assuming Idea schema includes a message field
         });
 
         await newIdea.save();
@@ -40,8 +42,8 @@ const saveIdeas = async (req, res) => {
     }
 };
 
-const deleteidea = (req, res)=>
-{
+
+const deleteidea = (req, res) => {
 
     console.log(req.boyy);
 
@@ -49,21 +51,21 @@ const deleteidea = (req, res)=>
 
 
 const saveRemark = (req, res) => {
-  const { ideaId, remarks } = req.body;
+    const { ideaId, remarks } = req.body;
 
-  // Find the idea by id and update its remarks and status
-  Idea.findByIdAndUpdate(ideaId, { remarks: remarks, status: true }, { new: true })
-    .then((idea) => {
-      if (!idea) {
-        return res.status(404).json({ error: 'Idea not found' });
-      }
-      console.log('Remark saved successfully:', idea);
-      return res.status(200).json({ message: 'Remark saved successfully', idea });
-    })
-    .catch((error) => {
-      console.error('Error saving remark:', error);
-      return res.status(500).json({ error: 'Internal server error' });
-    });
+    // Find the idea by id and update its remarks and status
+    Idea.findByIdAndUpdate(ideaId, { remarks: remarks, status: true }, { new: true })
+        .then((idea) => {
+            if (!idea) {
+                return res.status(404).json({ error: 'Idea not found' });
+            }
+            console.log('Remark saved successfully:', idea);
+            return res.status(200).json({ message: 'Remark saved successfully', idea });
+        })
+        .catch((error) => {
+            console.error('Error saving remark:', error);
+            return res.status(500).json({ error: 'Internal server error' });
+        });
 };
 
 

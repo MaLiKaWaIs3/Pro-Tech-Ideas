@@ -11,10 +11,10 @@ const {
 
 
 
-router.get('/doctors', getExperts);
-router.get('/doctors/:id', getExpertById);
-router.post('/doctors', saveExpert);
-router.patch('/doctors/:id', updateExpert);
-router.delete('/doctors/:id', deleteExpert);
+router.get('/experts', getExperts);
+router.get('/experts/:id', getExpertById);
+router.post('/experts', saveExpert);
+router.patch('/experts/:id', updateExpert);
+router.delete('/experts/:id', deleteExpert);
 
 module.exports = router

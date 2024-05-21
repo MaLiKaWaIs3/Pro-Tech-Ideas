@@ -185,6 +185,7 @@ function SignupPage() {
           >
             <option value="Student">Student</option>
             <option value="Expert">Expert</option>
+            <option value="Admin">Admin</option>
           </select>
 
           <div className="form-group form-check mt-3 mx-2">

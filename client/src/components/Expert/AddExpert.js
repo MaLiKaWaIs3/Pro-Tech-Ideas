@@ -41,7 +41,7 @@ function Adddoctor() {
     }
 
 
-    fetch('http://localhost:3002/doctors', {
+    fetch('http://localhost:3002/experts', {
       method: "POST",
       headers: {
         'Content-Type': 'application/json'

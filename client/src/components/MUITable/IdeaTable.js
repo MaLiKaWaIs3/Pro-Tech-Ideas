@@ -91,11 +91,13 @@ export default function UserTable({ ideaList }) {
     // Update rows data to include remarks
     let rows = ideaList.map((idea) => {
         const statusText = idea.status ? "Reviewed" : "Pending";
+        const ideaDescriptionWithMsg = idea.message ? `${idea.idea_Description} - Message: ${idea.message}` : idea.idea_Description;
+
         const remarks = idea.remarks || 'Still Pending'; // Default to empty string if remarks are not available
         return createData(
             idea.name,
             idea.idea_name,
-            idea.idea_Description,
+            ideaDescriptionWithMsg,
             statusText,
             remarks,
             idea._id

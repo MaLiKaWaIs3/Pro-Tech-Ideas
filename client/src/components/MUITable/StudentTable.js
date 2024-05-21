@@ -27,15 +27,6 @@ function createData(Name, Email, Phone, Gender, Address, DOB, actionsID) {
     return { Name, Email, Phone, Gender, Address, DOB, actionsID };
 }
 
-// const rows = [
-//     createData('John Doe', 'Dr. Smith', '2023-03-20', '10:00 AM', ''),
-//     createData('Jane Doe', 'Dr. Johnson', '2023-03-22', '2:00 PM', ''),
-//     createData('Bob Smith', 'Dr. Lee', '2023-03-24', '11:30 AM', ''),
-//     createData('Alice Johnson', 'Dr. Davis', '2023-03-26', '4:00 PM', ''),
-//     createData('Chris Lee', 'Dr. Martin', '2023-03-28', '3:30 PM', ''),
-//     createData('Sarah Davis', 'Dr. Brown', '2023-03-30', '9:45 AM', ''),
-
-// ];
 
 export default function UserTable({ patientList, deletePatient }) {
     const [page, setPage] = React.useState(0);

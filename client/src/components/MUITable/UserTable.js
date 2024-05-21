@@ -28,17 +28,6 @@ const columns = [
 function createData(Name, Email, Role, actionsID) {
     return { Name, Email, Role, actionsID };
 }
-
-// const rows = [
-//     createData('John Doe', 'Dr. Smith', '2023-03-20', '10:00 AM', ''),
-//     createData('Jane Doe', 'Dr. Johnson', '2023-03-22', '2:00 PM', ''),
-//     createData('Bob Smith', 'Dr. Lee', '2023-03-24', '11:30 AM', ''),
-//     createData('Alice Johnson', 'Dr. Davis', '2023-03-26', '4:00 PM', ''),
-//     createData('Chris Lee', 'Dr. Martin', '2023-03-28', '3:30 PM', ''),
-//     createData('Sarah Davis', 'Dr. Brown', '2023-03-30', '9:45 AM', ''),
-
-// ];
-
 export default function UserTable({ userList, deleteUser }) {
     const [page, setPage] = React.useState(0);
     // const [rows, setRows] = React.useState([]);
@@ -86,11 +75,6 @@ export default function UserTable({ userList, deleteUser }) {
     React.useEffect(() => {
 
     }, [])
-
-
-
-    // getDoctorByID(bookedAppointments[0].doctorId);
-    // getPatientByID(bookedAppointments[0].patientId);
 
     return (
         <Paper sx={{ width: '95%', overflow: 'hidden', marginTop: 2, boxShadow: "0 12px 24px rgba(0, 0, 0, 0.2) " }}>

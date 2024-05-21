@@ -35,15 +35,14 @@ import DoctorProfile from './components/Profile/ExpertProfile';
 import PatientProfile from './components/Profile/StudentProfile';
 import AdminProfile from './components/Profile/AdminProfile';
 
-import Login from './components/Login/Login';
 import ForgetPassword from './components/Login/ForgetPassword'
 import OTPForm from './components/Login/Otpform'
-import PatientHistory from './components/Student/StudentHistory';
 
 
 import Ideas from './components/Ideas/uploadideas';
 import UploadIdeas from './components/Ideas/uploadideas';
 import Idealist from './components/Ideas/Idealist';
+import ProjectIdealist from './components/Ideas/ProjectIdeasList';
 
 const NotFound = () => <h2 style={{ margin: '70px' }}>This Path is not available</h2>
 
@@ -92,12 +91,10 @@ export default function PageRoutes() {
                     <Route path='add' element={<AddExpert />} />
                     <Route path="edit/:id" element={<EditExpert />} />
                 </Route>
-
-                <Route path='patient/history/:id' element={<ProtectedStaffRoute> <PatientHistory /> </ProtectedStaffRoute>} >
-
-                </Route>
                 <Route path="uploadideas" element={<UploadIdeas />} />
                 <Route path="ideas" element={<Idealist />} />
+                <Route path="projectideas" element={<ProjectIdealist />} />
+                
 
 
                 <Route path='profile' element={
@@ -119,12 +116,6 @@ export default function PageRoutes() {
             <Route path='/getotp' element={<ForgetPassword />} />
             <Route path='/Otpform' element={<OTPForm />} />
             <Route path='/ideas' element={<Ideas />} />
-
-
-            {/* <Route path="/users" element={<UserList />} /> */}
-            {/* <Route path="/users3" element={<UserList3 />} /> */}
-            {/* <Route path='/adduser' element= {<AddUser />} />
-            <Route path="edituser/:id" element={<EditUser />} /> */}
             <Route path='/*' element={<NotFound />} />
 
         </Routes>
